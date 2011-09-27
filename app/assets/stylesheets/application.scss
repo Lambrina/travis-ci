@@ -906,6 +906,15 @@ ul#tokens {
       color: #666;
       text-decoration: none;
     }
+    .organization {
+      background-color: #f00000;
+      color: #ffffff;
+      display: inline;
+      padding: 3px 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+      border-radius: 4px;
+    }
     .description {
       display: none;
       margin-left: 10px;
