@@ -4,6 +4,8 @@ module Support
   module GithubApi
     URLS = %w(
       https://github.com/api/v2/json/repos/show/svenfuchs
+      https://github.com/api/v2/json/user/show/svenfuchs/organizations
+      https://github.com/api/v2/json/organizations/travis-ci/public_repositories
       http://github.com/api/v2/json/repos/show/svenfuchs/gem-release
       http://github.com/api/v2/json/repos/show/svenfuchs/minimal
       http://github.com/api/v2/json/repos/show/travis-ci/travis-ci
