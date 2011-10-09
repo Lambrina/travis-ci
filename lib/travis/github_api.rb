@@ -30,11 +30,11 @@ module Travis
       end
 
       def repositories_for_user(login)
-        Octokit.repositories(login) + Octokit.organizations(login).map do |organization|
+        Octokit.repositories(login) + Octokit.organizations(login).flat_map do |organization|
           Octokit.organization_repositories(organization.login).each do |repo|
             repo.organization_name = organization.name
           end
-        end.flatten
+        end
       end
     end
   end
