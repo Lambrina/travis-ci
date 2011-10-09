@@ -52,6 +52,13 @@ Travis.DataSource = SC.DataSource.extend({
       } else {
         store.dataSourceDidError(storeKey, response);
       }
+    }).fail(function(data, status, response) {
+      store.dataSourceDidError(storeKey, response);
+      repo = store.materializeRecord(storeKey);
+      repo.toggleWithoutCommit();
+      repo.notifyPropertyChange("active");
+      store.dataSourceDidComplete(storeKey);
+      alert(data.responseText);
     });
 
     return YES;
