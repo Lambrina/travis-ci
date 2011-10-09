@@ -2,8 +2,11 @@ Travis.ServiceHook = Travis.Record.extend({
   primaryKey: 'uid',
 
   toggle: function() {
-    this.writeAttribute('active', !this.get('active'));
+    this.toggleWithoutCommit();
     this.commitRecord({ owner: this.get('owner'), name: this.get('name') });
+  },
+  toggleWithoutCommit: function() {
+  	this.writeAttribute('active', !this.get('active'));
   },
 });
 
