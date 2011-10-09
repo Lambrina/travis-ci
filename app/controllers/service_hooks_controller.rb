@@ -18,6 +18,10 @@ class ServiceHooksController < ApplicationController
 
   private
 
+    def not_acceptable exception
+      render :status => :forbidden, :text => exception.message
+    end
+
     def repositories
       @repositories ||= current_user.github_repositories
     end
